@@ -1,3 +1,4 @@
+package week1_introduction;
 import java.util.Scanner;
 
 public class ATM {
