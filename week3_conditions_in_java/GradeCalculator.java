@@ -31,9 +31,9 @@ public class GradeCalculator {
     }
 
     public static void main(String[] args) {
-        System.out.println(getGrade(85));       // Output: B
-        System.out.println(getGradeSwitch(85)); // Output: B
-        System.out.println(getGradeSwitch(92)); // Output: A
-        System.out.println(getGradeSwitch(58)); // Output: F
+        System.out.println(getGrade(85));       
+        System.out.println(getGradeSwitch(85)); 
+        System.out.println(getGradeSwitch(92)); 
+        System.out.println(getGradeSwitch(58)); 
     }
 }
