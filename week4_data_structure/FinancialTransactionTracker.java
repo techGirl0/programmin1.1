@@ -63,6 +63,10 @@ public class FinancialTransactionTracker {
                     System.out.println("Exiting tracker. Goodbye!");
                     scanner.close();
                     return;
+                case 5:
+                    System.out.println("All transactions:");
+                    System.out.println(transactions);
+                    break;
                 default:
                     System.out.println("Option selected: " + choice);
             }
