@@ -31,6 +31,18 @@ public class FinancialTransactionTracker {
                     transactions.add(type + "," + amount + "," + date);
                     System.out.println("Transaction added.");
                     break;
+                case 2:
+                    LocalDate yesterday = LocalDate.now().minusDays(1);
+                    int count = 0;
+                    for (String transaction : transactions) {
+                        String[] parts = transaction.split(",");
+                        if (parts[2].equals(yesterday.toString())) {
+                            count++;
+                        }
+                    }
+                    System.out.println("Transactions yesterday: " + count);
+                    break;
+
                 case 4:
                     System.out.println("Exiting tracker. Goodbye!");
                     scanner.close();
