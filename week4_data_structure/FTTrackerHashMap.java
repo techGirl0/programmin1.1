@@ -36,6 +36,25 @@ public class FTTrackerHashMap {
                     System.out.println("Transaction added with ID: " + id);
                     break;
 
+                case 2:
+                    LocalDate yesterday = LocalDate.now().minusDays(1);
+                    int count = 0;
+                    for (String transaction : transactions.values()) {
+                        String[] parts = transaction.split(",");
+                        if (parts[2].equals(yesterday.toString())) {
+                            count++;
+                        }
+                    }
+                    System.out.println("Transactions yesterday: " + count);
+                    break;
+
+                case 5:
+                    System.out.println("All transactions:");
+                    for (Integer key : transactions.keySet()) {
+                        System.out.println("ID " + key + ": " + transactions.get(key));
+                    }
+                    break;
+
                 case 4:
                     System.out.println("Exiting tracker. Goodbye!");
                     scanner.close();
