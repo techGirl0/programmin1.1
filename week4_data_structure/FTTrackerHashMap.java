@@ -1,4 +1,5 @@
 package week4_data_structure;
+
 import java.util.HashMap;
 import java.util.Scanner;
 import java.time.LocalDate;
@@ -19,7 +20,7 @@ public class FTTrackerHashMap {
             System.out.print("Enter your choice: ");
 
             choice = scanner.nextInt();
-            scanner.nextLine();
+            scanner.nextLine(); 
 
             switch (choice) {
                 case 1:
@@ -30,7 +31,7 @@ public class FTTrackerHashMap {
                     scanner.nextLine(); 
                     LocalDate date = LocalDate.now();
 
-                    int id = transactions.size() + 1;
+                    int id = transactions.size() + 1; // unique ID
                     transactions.put(id, type + "," + amount + "," + date);
 
                     System.out.println("Transaction added with ID: " + id);
@@ -48,6 +49,22 @@ public class FTTrackerHashMap {
                     System.out.println("Transactions yesterday: " + count);
                     break;
 
+                case 3:
+                    double income = 0, expense = 0;
+                    for (String transaction : transactions.values()) {
+                        String[] parts = transaction.split(",");
+                        String tType = parts[0];
+                        double tAmount = Double.parseDouble(parts[1]);
+                        if (tType.equalsIgnoreCase("Sale")) {
+                            income += tAmount;
+                        } else if (tType.equalsIgnoreCase("Purchase")) {
+                            expense += tAmount;
+                        }
+                    }
+                    System.out.println("Total Income: " + income);
+                    System.out.println("Total Expense: " + expense);
+                    break;
+
                 case 5:
                     System.out.println("All transactions:");
                     for (Integer key : transactions.keySet()) {
@@ -61,7 +78,7 @@ public class FTTrackerHashMap {
                     return;
 
                 default:
-                    System.out.println("Option selected: " + choice);
+                    System.out.println("Invalid choice. Please enter 1-5.");
             }
         }
     }
