@@ -1,13 +1,23 @@
 package week4_data_structure;
-import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.Scanner;
 import java.util.HashMap;
+import java.util.Scanner;
 
-public class FTTrackerHashMap{
+public class FinancialTransactionTracker {
+    public static void main(String[] args) {
+        HashMap<Integer, String> transactions = new HashMap<>();
+        Scanner scanner = new Scanner(System.in);
 
-    public static void main(String[] args){
-       
+        while (true) {
+            System.out.println("\nFinancial Transaction Tracker");
+            System.out.println("1. Add Transaction");
+            System.out.println("2. Transactions Yesterday");
+            System.out.println("3. Total Income and Expense");
+            System.out.println("4. Exit");
+            System.out.println("5. Print all");
+            System.out.print("Enter your choice: ");
 
+            int choice = scanner.nextInt();
+            scanner.nextLine(); 
+        }
     }
 }
