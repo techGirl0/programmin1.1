@@ -43,6 +43,22 @@ public class FinancialTransactionTracker {
                     System.out.println("Transactions yesterday: " + count);
                     break;
 
+                case 3:
+                    double income = 0, expense = 0;
+                    for (String transaction : transactions) {
+                        String[] parts = transaction.split(",");
+                        String tType = parts[0];
+                        double tAmount = Double.parseDouble(parts[1]);
+                        if (tType.equalsIgnoreCase("Sale")) {
+                            income += tAmount;
+                        } else if (tType.equalsIgnoreCase("Purchase")) {
+                            expense += tAmount;
+                        }
+                    }
+                    System.out.println("Total Income: " + income);
+                    System.out.println("Total Expense: " + expense);
+                    break;
+
                 case 4:
                     System.out.println("Exiting tracker. Goodbye!");
                     scanner.close();
