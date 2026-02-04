@@ -1,3 +1,4 @@
+package week4_data_structure;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -18,14 +19,14 @@ public class FinancialTransactionTracker {
             int choice = scanner.nextInt();
             scanner.nextLine(); 
 
-            if (choice == 4) {
-                System.out.println("Exiting tracker. Goodbye!");
-                break; 
+            switch (choice) {
+                case 4:
+                    System.out.println("Exiting tracker. Goodbye!");
+                    scanner.close();
+                    return;
+                default:
+                    System.out.println("Option selected: " + choice);
             }
-
-            System.out.println("You selected option: " + choice);
         }
-
-        scanner.close();
     }
 }
