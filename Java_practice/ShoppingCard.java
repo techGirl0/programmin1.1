@@ -3,7 +3,7 @@ package Java_practice;
 import java.util.ArrayList;
 
 public class ShoppingCard {
-    public static void main(String[] args) {
+     public static void main(String[] args) {
 
         ArrayList<String> cart = new ArrayList<>();
 
@@ -16,11 +16,14 @@ public class ShoppingCard {
         for (String item : cart) {
             System.out.println("- " + item);
         }
+
         cart.remove("Bread");
 
-        System.out.println("\nAfter removing Bread:");
+        System.out.println("\nUpdated Shopping Cart:");
         for (String item : cart) {
             System.out.println("- " + item);
         }
+
+        System.out.println("\nTotal items in cart: " + cart.size());
     }
 }
