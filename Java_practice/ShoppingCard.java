@@ -16,6 +16,11 @@ public class ShoppingCard {
         for (String item : cart) {
             System.out.println("- " + item);
         }
+        cart.remove("Bread");
 
+        System.out.println("\nAfter removing Bread:");
+        for (String item : cart) {
+            System.out.println("- " + item);
+        }
     }
 }
